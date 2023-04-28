@@ -1,6 +1,7 @@
 package edu.ib;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class InterfaceTester {
     public static void main(String[] args) {
@@ -15,9 +16,13 @@ public class InterfaceTester {
 
         Employee [] employees={e1,e2,e3};
         System.out.println(Arrays.toString(employees));
-        //Arrays.sort(employees);
+       //Arrays.sort(employees); // interface Comparable
         //Arrays.sort(employees, new AgeComparator());
-        Arrays.sort(employees, new FirstNameComparator());
+        //Arrays.sort(employees, new FirstNameComparator());
+//
+        Arrays.sort(employees,( Employee em1, Employee em2)
+                -> Integer.compare(em1.getAge(),em2.getAge()));
+
         System.out.println(Arrays.toString(employees));
 
 
